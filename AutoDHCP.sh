@@ -1,5 +1,18 @@
 #!/bin/bash
 
+echo "Witaj w automatycznym kreatorze DHCP"
+echo "Wybierz 1 jeśli chcesz zainstalować serwer DHCP"
+
+read What
+if [ $What = 1 ]
+then 
+echo "Upewnij się, że masz wybrane 2 karty sieciowe!"
+echo "Pierwsza kartą sieciowa ma byc NAT!"
+echo "Druga kartą sieciową ma być sieć wewnętrzna!"
+echo "Wpisz tak jeśli masz dobrze wybrane sieciówki!"
+read What1
+if [ What1 = "tak" ]
+then
 echo "Podaj adres IP serwera"
 read IpSerwera
 echo "Podaj maske serwera"
@@ -31,4 +44,5 @@ echo "iface enp0s8 inet static" >> /etc/network/interfaces
 echo "	address $IpSerwera" >> /etc/network/interfaces 
 echo "	netmask $MaskaSerwera" >> /etc/network/interfaces 
 echo "	broadcast $BroadcastSerwera" >> /etc/network/interfaces 
+systemctl restart networking
 
