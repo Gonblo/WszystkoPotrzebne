@@ -485,27 +485,27 @@ rm /etc/dhcp/dhcpd.conf
 rm /etc/default/isc-dhcp-server
 rm /etc/network/interfaces
 touch /etc/network/interfaces
-echo '# Defaults for isc-dhcp-server initscript' >> /etc/network/interfaces
-echo '# sourced by /etc/init.d/isc-dhcp-server' >> /etc/network/interfaces
-echo '# installed at /etc/default/isc-dhcp-server by the maintainer scripts' >> /etc/network/interfaces
-echo '' >> /etc/network/interfaces
-echo '#' >> /etc/network/interfaces
-echo '# This is a POSIX shell fragment' >> /etc/network/interfaces
-echo '#' >> /etc/network/interfaces
-echo '' >> /etc/network/interfaces
-echo '# Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf).' >> /etc/network/interfaces
+echo "# Defaults for isc-dhcp-server initscript" >> /etc/network/interfaces
+echo "# sourced by /etc/init.d/isc-dhcp-server" >> /etc/network/interfaces
+echo "# installed at /etc/default/isc-dhcp-server by the maintainer scripts" >> /etc/network/interfaces
+echo "" >> /etc/network/interfaces
+echo "#" >> /etc/network/interfaces
+echo "# This is a POSIX shell fragment" >> /etc/network/interfaces
+echo "#" >> /etc/network/interfaces
+echo "" >> /etc/network/interfaces
+echo "# Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf)." >> /etc/network/interfaces
 echo "#DHCPD_CONF=/etc/dhcp/dhcpd.conf" >> /etc/network/interfaces
-echo '' >> /etc/network/interfaces
+echo "" >> /etc/network/interfaces
 echo "# Path to dhcpd's PID file (default: /var/run/dhcpd.pid)." >> /etc/network/interfaces
-echo '#DHCPD_PID=/var/run/dhcpd.pid' >> /etc/network/interfaces
-echo '' >> /etc/network/interfaces
-echo '# Additional options to start dhcpd with.' >> /etc/network/interfaces
-echo '#       Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead' >> /etc/network/interfaces
-echo '#OPTIONS=""' >> /etc/network/interfaces
-echo '' >> /etc/network/interfaces
-echo '# On what interfaces should the DHCP server (dhcpd) serve DHCP requests?' >> /etc/network/interfaces
-echo '#       Separate multiple interfaces with spaces, e.g. "eth0 eth1".' >> /etc/network/interfaces
-echo 'INTERFACES=""' >> /etc/network/interfaces
+echo "#DHCPD_PID=/var/run/dhcpd.pid" >> /etc/network/interfaces
+echo "" >> /etc/network/interfaces
+echo "# Additional options to start dhcpd with." >> /etc/network/interfaces
+echo "#       Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead" >> /etc/network/interfaces
+echo "#OPTIONS=""" >> /etc/network/interfaces
+echo "" >> /etc/network/interfaces
+echo "# On what interfaces should the DHCP server (dhcpd) serve DHCP requests?" >> /etc/network/interfaces
+echo "#       Separate multiple interfaces with spaces, e.g. "eth0 eth1"." >> /etc/network/interfaces
+echo "INTERFACES=""" >> /etc/network/interfaces
 
 echo "Wszystko zostalo odinstalowane!"
 
