@@ -98,7 +98,7 @@ read OIP
 echo "Podaj zakres DO którego DHCP ma przydzielać"
 read DIP
 echo "Options routers podaj ip"
-read OptionsR
+read OptionR
 echo "Podaj Broadcast"
 read BroadcastX
 rm /etc/dhcp/dhcpd.conf
