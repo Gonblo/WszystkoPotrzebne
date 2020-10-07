@@ -160,7 +160,7 @@ echo "subnet $Subnet netmask $MaskSub {" >> /etc/dhcp/dhcpd.conf
 echo "  range $OIP $DIP;" >> /etc/dhcp/dhcpd.conf
 echo "  option $IpDomeny;" >> /etc/dhcp/dhcpd.conf
 echo "  option domain-name "$NazwaDomeny";" >> /etc/dhcp/dhcpd.conf
-echo "  option subnet-mask $MaskSUb;" >> /etc/dhcp/dhcpd.conf
+echo "  option subnet-mask $MaskSub;" >> /etc/dhcp/dhcpd.conf
 echo "  option routers $OptionR;" >> /etc/dhcp/dhcpd.conf
 echo "  option broadcast-address $BroadcastX;" >> /etc/dhcp/dhcpd.conf
 echo "  default-lease-time 600;" >> /etc/dhcp/dhcpd.conf
