@@ -82,8 +82,12 @@ echo "" >> /etc/default/isc-dhcp-server
 echo "# On what interfaces should the DHCP server (dhcpd) serve DHCP requests?" >> /etc/default/isc-dhcp-server
 echo "#       Separate multiple interfaces with spaces, e.g. "eth0 eth1"." >> /etc/default/isc-dhcp-server
 echo "INTERFACES="enp0s8"" >> /etc/default/isc-dhcp-server
-
-
+#POLECENIA DO EDYCJI PLIKU DHCPD.CONF
+clear
+echo "Podaj nazwe domeny!"
+read NazwaDomeny
+echo "Podaj IP domeny!"
+read IpDomeny
 #EDYTOWANIE PLIKU DHCPD.CONF
 echo "#" >> /etc/dhcp/dhcpd.conf
 echo "# Sample configuration file for ISC dhcpd for Debian" >> /etc/dhcp/dhcpd.conf
@@ -100,8 +104,8 @@ echo "# have support for DDNS.)" >> /etc/dhcp/dhcpd.conf
 echo "ddns-update-style none;" >> /etc/dhcp/dhcpd.conf
 echo "" >> /etc/dhcp/dhcpd.conf
 echo "# option definitions common to all supported networks..." >> /etc/dhcp/dhcpd.conf
-echo "option domain-name "example.org";" >> /etc/dhcp/dhcpd.conf
-echo "option domain-name-servers ns1.example.org, ns2.example.org;" >> /etc/dhcp/dhcpd.conf
+echo "option domain-name "$NazwaDomeny";" >> /etc/dhcp/dhcpd.conf
+echo "option domain-name-servers $IpDomeny;" >> /etc/dhcp/dhcpd.conf
 echo "" >> /etc/dhcp/dhcpd.conf
 echo "default-lease-time 600;" >> /etc/dhcp/dhcpd.conf
 echo "max-lease-time 7200;" >> /etc/dhcp/dhcpd.conf
