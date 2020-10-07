@@ -83,6 +83,8 @@ echo "# On what interfaces should the DHCP server (dhcpd) serve DHCP requests?" 
 echo "#       Separate multiple interfaces with spaces, e.g. "eth0 eth1"." >> /etc/default/isc-dhcp-server
 echo "INTERFACES="enp0s8"" >> /etc/default/isc-dhcp-server
 
+
+#EDYTOWANIE PLIKU DHCPD.CONF
 echo "#" >> /etc/dhcp/dhcpd.conf
 echo "# Sample configuration file for ISC dhcpd for Debian" >> /etc/dhcp/dhcpd.conf
 echo "#" >> /etc/dhcp/dhcpd.conf
@@ -106,7 +108,7 @@ echo "max-lease-time 7200;" >> /etc/dhcp/dhcpd.conf
 echo "" >> /etc/dhcp/dhcpd.conf
 echo "# If this DHCP server is the official DHCP server for the local" >> /etc/dhcp/dhcpd.conf
 echo "# network, the authoritative directive should be uncommented." >> /etc/dhcp/dhcpd.conf
-echo "#authoritative;" >> /etc/dhcp/dhcpd.conf
+echo "authoritative;" >> /etc/dhcp/dhcpd.conf
 echo "" >> /etc/dhcp/dhcpd.conf
 echo "# Use this to send dhcp log messages to a different log file (you also" >> /etc/dhcp/dhcpd.conf
 echo "# have to hack syslog.conf to complete the redirection)." >> /etc/dhcp/dhcpd.conf
