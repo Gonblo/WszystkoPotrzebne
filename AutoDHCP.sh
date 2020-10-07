@@ -89,6 +89,18 @@ echo "Podaj nazwe domeny!"
 read NazwaDomeny
 echo "Podaj IP domeny!"
 read IpDomeny
+echo "Podaj Subnet"
+read Subnet
+echo "Podaj maske podsieci"
+read MaskSub
+echo "Podaj zakres OD którego DHCP ma przydzielać"
+read OIP
+echo "Podaj zakres DO którego DHCP ma przydzielać"
+read DIP
+echo "Options routers podaj ip"
+read OptionsR
+echo "Podaj Broadcast"
+read BroadcastX
 rm /etc/dhcp/dhcpd.conf
 touch /etc/dhcp/dhcpd.conf
 #EDYTOWANIE PLIKU DHCPD.CONF
@@ -144,16 +156,16 @@ echo "#  option routers rtr-239-32-1.example.org;" >> /etc/dhcp/dhcpd.conf
 echo "#}" >> /etc/dhcp/dhcpd.conf
 echo "" >> /etc/dhcp/dhcpd.conf
 echo "# A slightly different configuration for an internal subnet." >> /etc/dhcp/dhcpd.conf
-echo "#subnet 10.5.5.0 netmask 255.255.255.224 {" >> /etc/dhcp/dhcpd.conf
-echo "#  range 10.5.5.26 10.5.5.30;" >> /etc/dhcp/dhcpd.conf
-echo "#  option domain-name-servers ns1.internal.example.org;" >> /etc/dhcp/dhcpd.conf
-echo "#  option domain-name "internal.example.org";" >> /etc/dhcp/dhcpd.conf
-echo "#  option subnet-mask 255.255.255.224;" >> /etc/dhcp/dhcpd.conf
-echo "#  option routers 10.5.5.1;" >> /etc/dhcp/dhcpd.conf
-echo "#  option broadcast-address 10.5.5.31;" >> /etc/dhcp/dhcpd.conf
-echo "#  default-lease-time 600;" >> /etc/dhcp/dhcpd.conf
-echo "#  max-lease-time 7200;" >> /etc/dhcp/dhcpd.conf
-echo "#}" >> /etc/dhcp/dhcpd.conf
+echo "subnet $Subnet netmask $MaskSub {" >> /etc/dhcp/dhcpd.conf
+echo "  range $OIP $DIP;" >> /etc/dhcp/dhcpd.conf
+echo "  option $IpDomeny;" >> /etc/dhcp/dhcpd.conf
+echo "  option domain-name "$NazwaDomeny";" >> /etc/dhcp/dhcpd.conf
+echo "  option subnet-mask $MaskSUb;" >> /etc/dhcp/dhcpd.conf
+echo "  option routers $OptionR;" >> /etc/dhcp/dhcpd.conf
+echo "  option broadcast-address $BroadcastX;" >> /etc/dhcp/dhcpd.conf
+echo "  default-lease-time 600;" >> /etc/dhcp/dhcpd.conf
+echo "  max-lease-time 7200;" >> /etc/dhcp/dhcpd.conf
+echo "}" >> /etc/dhcp/dhcpd.conf
 echo "" >> /etc/dhcp/dhcpd.conf
 echo "# Hosts which require special configuration options can be listed in" >> /etc/dhcp/dhcpd.conf
 echo "# host statements.   If no address is specified, the address will be" >> /etc/dhcp/dhcpd.conf
