@@ -60,7 +60,8 @@ echo "Instaluje serwer DHCP"
 apt-get install isc-dhcp-server
 clear
 echo "Podmieniam plik isc-dhcp-server"
-
+rm /etc/default/isc-dhcp-server
+touch /etc/default/isc-dhcp-server
 echo "# Defaults for isc-dhcp-server initscript" >> /etc/default/isc-dhcp-server
 echo "# sourced by /etc/init.d/isc-dhcp-server" >> /etc/default/isc-dhcp-server
 echo "# installed at /etc/default/isc-dhcp-server by the maintainer scripts" >> /etc/default/isc-dhcp-server
@@ -88,6 +89,8 @@ echo "Podaj nazwe domeny!"
 read NazwaDomeny
 echo "Podaj IP domeny!"
 read IpDomeny
+rm /etc/dhcp/dhcpd.conf
+touch /etc/dhcp/dhcpd.conf
 #EDYTOWANIE PLIKU DHCPD.CONF
 echo "#" >> /etc/dhcp/dhcpd.conf
 echo "# Sample configuration file for ISC dhcpd for Debian" >> /etc/dhcp/dhcpd.conf
