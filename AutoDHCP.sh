@@ -55,7 +55,32 @@ clear
 echo "Restartowanie kart sieciowych"
 systemctl restart networking #Restartowanie kart sieciowych
 #Instalacja serwera DHCP
+clear
+echo "Instaluje serwer DHCP"
 apt-get install isc-dhcp-server
+
+echo "# Defaults for isc-dhcp-server initscript" >> /etc/default/isc-dhcp-server
+echo "# sourced by /etc/init.d/isc-dhcp-server" >> /etc/default/isc-dhcp-server
+echo "# installed at /etc/default/isc-dhcp-server by the maintainer scripts" >> /etc/default/isc-dhcp-server
+echo "" >> /etc/default/isc-dhcp-server
+echo "#" >> /etc/default/isc-dhcp-server
+echo "# This is a POSIX shell fragment" >> /etc/default/isc-dhcp-server
+echo "#" >> /etc/default/isc-dhcp-server
+echo "" >> /etc/default/isc-dhcp-server
+echo "# Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf)." >> /etc/default/isc-dhcp-server
+echo "#DHCPD_CONF=/etc/dhcp/dhcpd.conf" >> /etc/default/isc-dhcp-server
+echo "" >> /etc/default/isc-dhcp-server
+echo "# Path to dhcpd's PID file (default: /var/run/dhcpd.pid)." >> /etc/default/isc-dhcp-server
+echo "#DHCPD_PID=/var/run/dhcpd.pid" >> /etc/default/isc-dhcp-server
+echo "" >> /etc/default/isc-dhcp-server
+echo "# Additional options to start dhcpd with." >> /etc/default/isc-dhcp-server
+echo "#       Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead" >> /etc/default/isc-dhcp-server
+echo "#OPTIONS=""" >> /etc/default/isc-dhcp-server
+echo "" >> /etc/default/isc-dhcp-server
+echo "# On what interfaces should the DHCP server (dhcpd) serve DHCP requests?" >> /etc/default/isc-dhcp-server
+echo "#       Separate multiple interfaces with spaces, e.g. "eth0 eth1"." >> /etc/default/isc-dhcp-server
+echo "INTERFACES="enp0s8"" >> /etc/default/isc-dhcp-server
+
 
 fi
 fi 
