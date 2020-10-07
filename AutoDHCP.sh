@@ -18,7 +18,7 @@ then
 clear
 echo "KREATOR ROZPOCZYNA PRACE"
 echo "KONFIGURUJESZ PLIK /ETC/NETWORK/INTERFACES !"
-echo "KONFIGUROWANA JEST KARTA enp0s8 (SIEC WEWNETRZNA)
+echo "KONFIGUROWANA JEST KARTA enp0s8 (SIEC WEWNETRZNA)"
 echo "Podaj adres IP serwera" #Wczytywanie wartosci dla pliku interfaces
 read IpSerwera
 echo "Podaj maske serwera"
