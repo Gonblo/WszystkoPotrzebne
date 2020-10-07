@@ -119,7 +119,7 @@ echo "# have support for DDNS.)" >> /etc/dhcp/dhcpd.conf
 echo "ddns-update-style none;" >> /etc/dhcp/dhcpd.conf
 echo "" >> /etc/dhcp/dhcpd.conf
 echo "# option definitions common to all supported networks..." >> /etc/dhcp/dhcpd.conf
-echo "option domain-name "$NazwaDomeny";" >> /etc/dhcp/dhcpd.conf
+echo 'option domain-name "$NazwaDomeny";'>> /etc/dhcp/dhcpd.conf
 echo "option domain-name-servers $IpDomeny;" >> /etc/dhcp/dhcpd.conf
 echo "" >> /etc/dhcp/dhcpd.conf
 echo "default-lease-time 600;" >> /etc/dhcp/dhcpd.conf
@@ -158,8 +158,8 @@ echo "" >> /etc/dhcp/dhcpd.conf
 echo "# A slightly different configuration for an internal subnet." >> /etc/dhcp/dhcpd.conf
 echo "subnet $Subnet netmask $MaskSub {" >> /etc/dhcp/dhcpd.conf
 echo "  range $OIP $DIP;" >> /etc/dhcp/dhcpd.conf
-echo "  option $IpDomeny;" >> /etc/dhcp/dhcpd.conf
-echo "  option domain-name "$NazwaDomeny";" >> /etc/dhcp/dhcpd.conf
+echo "  option domain-name-servers $IpDomeny;" >> /etc/dhcp/dhcpd.conf
+echo '  option domain-name "$NazwaDomeny";' >> /etc/dhcp/dhcpd.conf
 echo "  option subnet-mask $MaskSub;" >> /etc/dhcp/dhcpd.conf
 echo "  option routers $OptionR;" >> /etc/dhcp/dhcpd.conf
 echo "  option broadcast-address $BroadcastX;" >> /etc/dhcp/dhcpd.conf
