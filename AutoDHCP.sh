@@ -17,8 +17,8 @@ if [ $What1 = "TAK" ]
 then
 clear
 echo "KREATOR ROZPOCZYNA PRACE"
-echo "KREATOR ROZPOCZYNA PRACE"
-echo "KREATOR ROZPOCZYNA PRACE"
+echo "KONFIGURUJESZ PLIK /ETC/NETWORK/INTERFACES !"
+echo "KONFIGUROWANA JEST KARTA enp0s8 (SIEC WEWNETRZNA)
 echo "Podaj adres IP serwera" #Wczytywanie wartosci dla pliku interfaces
 read IpSerwera
 echo "Podaj maske serwera"
@@ -85,21 +85,21 @@ echo "#       Separate multiple interfaces with spaces, e.g. "eth0 eth1"." >> /e
 echo "INTERFACES="enp0s8"" >> /etc/default/isc-dhcp-server
 #POLECENIA DO EDYCJI PLIKU DHCPD.CONF
 clear
-echo "Podaj nazwe domeny!"
+echo "Podaj nazwe domeny! (option domain-name-servers) "
 read NazwaDomeny
-echo "Podaj IP domeny!"
+echo "Podaj IP domeny! (option domain-name) "
 read IpDomeny
-echo "Podaj Subnet"
+echo "Podaj Subnet (subnet ...)"
 read Subnet
-echo "Podaj maske podsieci"
+echo "Podaj maske podsieci (netmask ...)"
 read MaskSub
-echo "Podaj zakres OD którego DHCP ma przydzielać"
+echo "Podaj zakres OD którego DHCP ma przydzielać (range ...)"
 read OIP
-echo "Podaj zakres DO którego DHCP ma przydzielać"
+echo "Podaj zakres DO którego DHCP ma przydzielać (range ... ...)"
 read DIP
-echo "Options routers podaj ip"
+echo "Options routers podaj ip (option routers)"
 read OptionR
-echo "Podaj Broadcast"
+echo "Podaj Broadcast (option broadcast-address)"
 read BroadcastX
 rm /etc/dhcp/dhcpd.conf
 touch /etc/dhcp/dhcpd.conf
@@ -215,6 +215,9 @@ echo "#    deny members of "foo";" >> /etc/dhcp/dhcpd.conf
 echo "#    range 10.0.29.10 10.0.29.230;" >> /etc/dhcp/dhcpd.conf
 echo "#  }" >> /etc/dhcp/dhcpd.conf
 echo "#}" >> /etc/dhcp/dhcpd.conf
+systemctl start isc-dhcp-server
+clear
+echo "DHCP POPRAWNIE ZAINSTALOWANE I URUCHOMIONE!"
 fi
 fi 
 
