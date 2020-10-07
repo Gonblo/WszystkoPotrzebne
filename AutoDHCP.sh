@@ -494,9 +494,9 @@ echo '# This is a POSIX shell fragment' >> /etc/network/interfaces
 echo '#' >> /etc/network/interfaces
 echo '' >> /etc/network/interfaces
 echo '# Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf).' >> /etc/network/interfaces
-echo '#DHCPD_CONF=/etc/dhcp/dhcpd.conf' >> /etc/network/interfaces
+echo "#DHCPD_CONF=/etc/dhcp/dhcpd.conf" >> /etc/network/interfaces
 echo '' >> /etc/network/interfaces
-echo '# Path to dhcpd's PID file (default: /var/run/dhcpd.pid).' >> /etc/network/interfaces
+echo "# Path to dhcpd's PID file (default: /var/run/dhcpd.pid)." >> /etc/network/interfaces
 echo '#DHCPD_PID=/var/run/dhcpd.pid' >> /etc/network/interfaces
 echo '' >> /etc/network/interfaces
 echo '# Additional options to start dhcpd with.' >> /etc/network/interfaces
