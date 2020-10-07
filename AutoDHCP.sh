@@ -1,9 +1,11 @@
 #!/bin/bash
+clear
 # Slowa wstepu
 echo "Witaj w automatycznym kreatorze DHCP"
 echo "Wybierz 1 jeśli chcesz zainstalować serwer DHCP"
 # Wczytanie zmiennej What ktora odpowiada za instrukcje ktora wykona zaraz skrypt
 read What
+clear
 if [ $What = 1 ]
 then # Instrukcje dla uzytkownika
 echo "Upewnij się, że masz wybrane 2 karty sieciowe!"
@@ -13,6 +15,7 @@ echo "Wpisz TAK jeśli masz dobrze wybrane sieciówki!"
 read What1
 if [ $What1 = "TAK" ]
 then
+clear
 echo "KREATOR ROZPOCZYNA PRACE"
 echo "KREATOR ROZPOCZYNA PRACE"
 echo "KREATOR ROZPOCZYNA PRACE"
@@ -22,6 +25,7 @@ echo "Podaj maske serwera"
 read MaskaSerwera
 echo "Podaj broadcast serwera"
 read BroadcastSerwera
+clear
 # Edytowanie pliku interfaces
 rm /etc/network/interfaces
 touch /etc/network/interfaces
@@ -47,6 +51,8 @@ echo "iface enp0s8 inet static" >> /etc/network/interfaces
 echo "	address $IpSerwera" >> /etc/network/interfaces
 echo "	netmask $MaskaSerwera" >> /etc/network/interfaces
 echo "	broadcast $BroadcastSerwera" >> /etc/network/interfaces
+clear
+echo "Restartowanie kart sieciowych"
 systemctl restart networking #Restartowanie kart sieciowych
 #Instalacja serwera DHCP
 apt-get install isc-dhcp-server
