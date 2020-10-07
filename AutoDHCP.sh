@@ -11,7 +11,7 @@ echo "Pierwsza kartą sieciowa ma byc NAT!"
 echo "Druga kartą sieciową ma być sieć wewnętrzna!"
 echo "Wpisz TAK jeśli masz dobrze wybrane sieciówki!"
 read What1
-if [ What1 = "TAK" ]
+if [ $What1 = "TAK" ]
 then
 echo "KREATOR ROZPOCZYNA PRACE"
 echo "KREATOR ROZPOCZYNA PRACE"
