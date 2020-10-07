@@ -58,6 +58,8 @@ systemctl restart networking #Restartowanie kart sieciowych
 clear
 echo "Instaluje serwer DHCP"
 apt-get install isc-dhcp-server
+clear
+echo "Podmieniam plik isc-dhcp-server"
 
 echo "# Defaults for isc-dhcp-server initscript" >> /etc/default/isc-dhcp-server
 echo "# sourced by /etc/init.d/isc-dhcp-server" >> /etc/default/isc-dhcp-server
